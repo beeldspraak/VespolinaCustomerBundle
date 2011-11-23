@@ -13,10 +13,33 @@ namespace Vespolina\CustomerBundle\Model;
 interface CustomerInterface
 {
 
+    /**
+     * The (functional) customer id
+     *
+     * @abstract
+     * @return void
+     */
+    public function getCustomerId();
+
+    /**
+     * Customer communication language
+     *
+     * @abstract
+     * @return void
+     */
     public function getLanguage();
 
+
+    /**
+     * Customer name
+     *
+     * @abstract
+     * @return void
+     */
     public function getName();
 
+    public function setCustomerId($customerId);
+    
     public function setLanguage($language);
     
     public function setName($name);

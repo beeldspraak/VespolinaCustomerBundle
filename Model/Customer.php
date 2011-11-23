@@ -15,8 +15,9 @@ use Vespolina\CustomerBundle\Model\CustomerInterface;
 abstract class Customer implements CustomerInterface
 {
 
-    protected $createdAt;
     protected $addresses;
+    protected $createdAt;
+    protected $customerId;
     protected $language;
     protected $name;
     protected $type;    // person or organization
@@ -32,6 +33,12 @@ abstract class Customer implements CustomerInterface
     {
 
         return $this->addresses;
+    }
+
+    public function getCustomerId()
+    {
+
+        return $this->customerId;
     }
 
     public function getLanguage()
@@ -70,6 +77,11 @@ abstract class Customer implements CustomerInterface
     public function incrementUpdatedAt()
     {
         $this->updatedAt = new \DateTime();
+    }
+
+    public function setCustomerId($customerId)
+    {
+        $this->customerId = $customerId;
     }
     
     public function setLanguage($language)
