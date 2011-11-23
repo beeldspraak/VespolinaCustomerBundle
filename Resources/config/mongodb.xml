@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+
+<container xmlns="http://symfony.com/schema/dic/services"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
+
+    <parameters>
+        <parameter key="vespolina_customer.customer_manager.class">Vespolina\CustomerBundle\Document\CustomerManager</parameter>
+        <parameter key="vespolina_customer.model.customer.class">Vespolina\CustomerBundle\Document\Customer</parameter>
+        <parameter key="vespolina_customer.model.customer_identifier_set.class">Vespolina\CustomerBundle\Document\OrderIdentifierSet</parameter>
+    </parameters>
+
+    <services>
+        <service id="vespolina_customer.customer_manager" class="%vespolina_customer.customer_manager.class%">
+            <argument type="service" id="service_container" />
+        </service>
+        <service id="vespolina_customer.order_manager" alias="vespolina_customer.customer_manager" />
+    </services>
+</container>
