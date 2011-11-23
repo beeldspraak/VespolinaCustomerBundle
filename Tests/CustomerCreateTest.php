@@ -38,7 +38,7 @@ class CustomerCreateTest extends WebTestCase
         $customer = $customerManager->createCustomer();
 
         $customer->setName('Enron');
-
+        $customer->setCustomerId('ABC0001');
         $customerAddress = new CustomerAddress();
         $customerAddress->setStreet('Sesamstreet 11');
         $customerAddress->setCity('Mumbai');

@@ -6,6 +6,7 @@
 
     <mapped-superclass name="Vespolina\CustomerBundle\Document\BaseCustomer" collection="vespolina_customers">
 
+        <field name="customerId" fieldName="customerId" type="string" />
         <field name="name" fieldName="name" type="string" />
         <field name="language" fieldName="language" type="string" />
         <field name="orderState" fieldName="orderState" type="string" />
